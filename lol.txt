@@ -8,7 +8,7 @@ local minimizeUI = Enum.KeyCode.RightAlt
 
 -- 🟢 Create Main UI
 local Window = Fluent:CreateWindow({
-    Title = "Hutao hub [FREE]",
+    Title = "Space Hub [FREE]",
     SubTitle = "Dead Rails",
     TabWidth = 160,
     Size = UDim2.fromOffset(480, 360),
@@ -96,7 +96,7 @@ do
             }
             game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("RemotePromise"):WaitForChild("Remotes"):WaitForChild("C_EquipClass"):FireServer(unpack(args))            
             Fluent:Notify({
-                Title = "Hutao hub",
+                Title = "Space Hub",
                 Content = "Get and equip horse class successfully!",
                 Duration = 5
             })
@@ -864,7 +864,7 @@ do
                         addPlayerHighlight()
                     else
                         Fluent:Notify({
-                            Title = "Hutao hub",
+                            Title = "Space Hub",
                             Content = "Killed NPC",
                             SubContent = npc.Name, -- Optional
                             Duration = 1
@@ -1137,14 +1137,14 @@ do
                                 ShootRemote:FireServer(unpack(shootArgs))
                             end)
                             if not success then
-                                warn("[Hutao hub] Failed to fire shot: " .. tostring(err))
+                                warn("[Space Hub] Failed to fire shot: " .. tostring(err))
                             end
                             if AutoReloadEnabled then
                                 success, err = pcall(function()
                                     ReloadRemote:FireServer(workspace:GetServerTimeNow(), tool)
                                 end)
                                 if not success then
-                                    warn("[Hutao hub] Failed to reload: " .. tostring(err))
+                                    warn("[Space Hub] Failed to reload: " .. tostring(err))
                                 end
                             end
                         end
@@ -1338,7 +1338,7 @@ end)
 
             if priorityItem == "Snake Oil" and SnakeOil then
                 Fluent:Notify({
-                    Title = "Hutao hub",
+                    Title = "Space Hub",
                     Content = "Auto Heal",
                     SubContent = "Using Snake Oil!",
                     Duration = 2
@@ -1350,7 +1350,7 @@ end)
 
             elseif priorityItem == "Bandage" and Bandage then
                 Fluent:Notify({
-                    Title = "Hutao hub",
+                    Title = "Space Hub",
                     Content = "Auto Heal",
                     SubContent = "Using Bandage!",
                     Duration = 2
@@ -1361,7 +1361,7 @@ end)
 
             elseif SnakeOil then
                 Fluent:Notify({
-                    Title = "Hutao hub",
+                    Title = "Space Hub",
                     Content = "Auto Heal",
                     SubContent = "Using Snake Oil as fallback!",
                     Duration = 2
@@ -1373,7 +1373,7 @@ end)
 
             elseif Bandage then
                 Fluent:Notify({
-                    Title = "Hutao hub",
+                    Title = "Space Hub",
                     Content = "Auto Heal",
                     SubContent = "Using Bandage as fallback!",
                     Duration = 2
@@ -1590,12 +1590,6 @@ GunToggle:OnChanged(function(Value)
     end
 end)
 
-
-
-
-
----- scan item
-
         Tabs.Ite:AddButton({
             Title = "Scan Item(s)",
             Callback = function()
@@ -1646,7 +1640,7 @@ end)
                     end
 
                     Fluent:Notify({
-                        Title = "Hutao hub",
+                        Title = "Space Uub",
                         Content = "Scanned (" .. totalValue .. "$)",
                         SubContent = "Scanned " .. scannedItems .. "/" .. #folder:GetChildren() .. " items",
                         Duration = 15
@@ -2538,7 +2532,7 @@ do
     
         local StarterGui = game:GetService("StarterGui")
         Fluent:Notify({
-            Title = "Hutao HUB",
+            Title = "Space HUB",
             Content = "Bank : " .. is,
             SubContent = "Checked for bank...",
             Duration = 15
@@ -2547,7 +2541,7 @@ do
         if bank then
             local valute = bank.Vault.Combination.Value
             Fluent:Notify({
-                Title = "Hutao HUB",
+                Title = "Space HUB",
                 Content = "Bank Combination",
                 SubContent = "Combination is: " .. valute,
                 Duration = 15
@@ -2560,7 +2554,7 @@ do
     
         local StarterGui = game:GetService("StarterGui")
         Fluent:Notify({
-            Title = "Hutao HUB",
+            Title = "Space HUB",
             Content = "Structure {" .. child.Name .. "}",
             SubContent = "New building has spawned!",
             Duration = 15
@@ -2577,7 +2571,7 @@ do
     
         local StarterGui = game:GetService("StarterGui")
         Fluent:Notify({
-            Title = "Hutao HUB",
+            Title = "Space HUB",
             Content = "Unicorn Spawned!",
             Duration = 15
         })
@@ -2709,7 +2703,7 @@ do
             local function unlockCamera()
                 if player.CameraMode == Enum.CameraMode.Classic and player.CameraMaxZoomDistance >= 20 then
                     Fluent:Notify({
-                        Title = "Hutao HUB",
+                        Title = "Space HUB",
                         Content = "Camera is already unlocked!",
                         Duration = 3
                     })
@@ -2721,7 +2715,7 @@ do
                 camera.CameraSubject = player.Character and player.Character:FindFirstChild("Humanoid") or camera.CameraSubject
                 camera.CameraType = Enum.CameraType.Custom
                 Fluent:Notify({
-                    Title = "Hutao HUB",
+                    Title = "Space HUB",
                     Content = "Unlocked third-person view!",
                     SubContent = "Zoom camera out.",
                     Duration = 10
@@ -3161,7 +3155,7 @@ do
             startAntiAfk()
         else
             Fluent:Notify({
-                Title = "Hutao HUB",
+                Title = "Space HUB",
                 Content = "Anti idle is disabled!",
                 Duration = 5
             })
@@ -3215,8 +3209,8 @@ SaveManager:SetIgnoreIndexes({})
 -- use case for doing it this way:
 -- a script hub could have themes in a global folder
 -- and game configs in a separate folder per game
-InterfaceManager:SetFolder("Hutao HUB")
-SaveManager:SetFolder("Hutao HUB/Dead Rails")
+InterfaceManager:SetFolder("Space hub")
+SaveManager:SetFolder("Space HUB/Dead Rails")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
@@ -3224,7 +3218,7 @@ SaveManager:BuildConfigSection(Tabs.Settings)
 -- Select First Tab By Default
 Window:SelectTab(1)
 
-Fluent:Notify({ Title = "Hutao HUB", Content = "Dead Rails script loaded successfully!", Duration = 5 })
+Fluent:Notify({ Title = "Space HUB", Content = "Dead Rails script loaded successfully!", Duration = 5 })
 SaveManager:LoadAutoloadConfig()
 
 
